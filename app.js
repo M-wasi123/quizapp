@@ -77,7 +77,6 @@ nextBtn.addEventListener('click',() => {
             winner.innerHTML = 'you are genious'
         } else {
             document.getElementById('per').style.color = 'red'
-            document.getElementById('sco').style.border = '1px 1px 1px 1px '
             winner.innerHTML = 'you are loser'
         }
     }
