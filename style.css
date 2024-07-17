@@ -12,6 +12,7 @@ body{
     padding: 25px 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 0.1px solid rgb(207, 206, 206);
     background-color: rgb(226, 182, 115);
 
@@ -110,6 +111,7 @@ box-shadow: 2px 2px 2px 2px rgb(151, 106, 39);
     border-radius: 50%;
     background-color: rgb(247, 210, 163);
     color: rgb(44, 43, 43);
+    
 }
 .block{
     display: block;
@@ -127,4 +129,34 @@ box-shadow: 2px 2px 2px 2px rgb(151, 106, 39);
         box-shadow: 0px 0px 0px 0px;
         transform: translateY(2px);
     }
-    
+  
+@media only screen and (max-width:500px) {
+    .nav h3{
+        font-size: large;
+    }
+    .h3{
+        font-size: medium;
+    }
+} 
+@media only screen and (max-width:450px) {
+    .nav{
+        padding: 25px 20px;    
+    }
+    .nav h3{
+        font-size: medium;
+    }
+    .h3{
+        font-size: small;
+    }
+}   
+@media only screen and (max-width:380px) {
+    .nav{
+        padding: 25px 10px;    
+    }
+    .nav h3{
+        font-size: small;
+    }
+    .opt{
+        font-size: 10px;
+    }
+}

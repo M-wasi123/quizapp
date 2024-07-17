@@ -35,12 +35,12 @@ const check = () => {
 const questionLoad = () => {
     count++;
 const questionList = quest[count]
-question.innerHTML = questionList.que
+question.innerText = questionList.que
 
-option1.innerHTML  = questionList.ans1
-option2.innerHTML = questionList.ans2
-option3.innerHTML = questionList.ans3
-option4.innerHTML = questionList.ans4
+option1.innerText  = questionList.ans1
+option2.innerText = questionList.ans2
+option3.innerText = questionList.ans3
+option4.innerText = questionList.ans4
 
 }
 
@@ -51,16 +51,34 @@ nextBtn.addEventListener('click',() => {
        score++
     }
     questionLoad()
-    num.innerText = cout
+    if (count == 25) {
+        num.innerHTML = 25
+    }else{
+        num.innerHTML = cout
+    }
     deselectAll()
     if (cout > 25) {
         document.getElementById('score').classList.add('block')
         percentage.innerText = `${score*'4'.toString().padStart(2 , 0)}%`
         clearInterval(tim)
         if (score > 79) {
+            document.getElementById('per').style.color = 'green'
          winner.innerHTML = 'you are genious'
         } else {
+             document.getElementById('per').style.color = 'red'
          winner.innerHTML = 'you are loser'
+        }
+    }
+    if (cout > 25) {
+        document.getElementById('score').classList.add('block')
+        percentage.innerText = `${score*'4'.toString().padStart(2 , 0)}%`
+        if (score > 79) {
+            document.getElementById('per').style.color = 'green'
+            winner.innerHTML = 'you are genious'
+        } else {
+            document.getElementById('per').style.color = 'red'
+            document.getElementById('sco').style.border = '1px 1px 1px 1px '
+            winner.innerHTML = 'you are loser'
         }
     }
 })
@@ -97,9 +115,12 @@ if (sec == 0) {
     percentage.innerText = `${score*'4'.toString().padStart(2 , 0)}%`
     clearInterval(tim)
     if (score > 79) {
-     winner.innerHTML = 'you are genious'
+        document.getElementById('per').style.color = 'green'
+        winner.innerHTML = 'you are genious'
     } else {
-     winner.innerHTML = 'you are loser'
+        document.getElementById('per').style.color = 'red'
+        document.getElementById('sco').style.border = '1px 1px 1px 1px '
+        winner.innerHTML = 'you are loser'
     }
 }
 time.innerText = `${min.toString().padStart(2 , 0)}.${sec.toString().padStart(2 , 0)}`
