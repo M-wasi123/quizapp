@@ -13,13 +13,11 @@ let skip = document.getElementById('skip')
 let rad = document.querySelectorAll('.ans')
 let start = document.getElementById('st-quiz')
 let percentage = document.getElementById('per')
-let winner = document.getElementById('win')
 let restart = document.getElementById('restart')
 
 let score = 0;
 let count = 0;
 let cout = 1;
-
 
 const check = () => {
     let answer;
@@ -48,7 +46,7 @@ nextBtn.addEventListener('click',() => {
     cout++
     const chec = check()
     if (chec == quest[count].ans) {
-       score++
+        score++
     }
     questionLoad()
     if (count == 25) {
@@ -61,24 +59,6 @@ nextBtn.addEventListener('click',() => {
         document.getElementById('score').classList.add('block')
         percentage.innerText = `${score*'4'.toString().padStart(2 , 0)}%`
         clearInterval(tim)
-        if (score > 79) {
-            document.getElementById('per').style.color = 'green'
-         winner.innerHTML = 'you are genious'
-        } else {
-             document.getElementById('per').style.color = 'red'
-         winner.innerHTML = 'you are loser'
-        }
-    }
-    if (cout > 25) {
-        document.getElementById('score').classList.add('block')
-        percentage.innerText = `${score*'4'.toString().padStart(2 , 0)}%`
-        if (score > 79) {
-            document.getElementById('per').style.color = 'green'
-            winner.innerHTML = 'you are genious'
-        } else {
-            document.getElementById('per').style.color = 'red'
-            winner.innerHTML = 'you are loser'
-        }
     }
 })
 skip.addEventListener('click',()=>{
@@ -103,7 +83,7 @@ const deselectAll = () => {
 let sec = 60
 let min = 5
 const timer = ()=>{
-const tim = setInterval(()=>{
+    const tim = setInterval(()=>{
 sec--
 if (sec == 0) {
     sec = 59
@@ -113,13 +93,10 @@ if (sec == 0) {
     document.getElementById('score').classList.add('block')
     percentage.innerText = `${score*'4'.toString().padStart(2 , 0)}%`
     clearInterval(tim)
-    if (score > 79) {
-        document.getElementById('per').style.color = 'green'
-        winner.innerHTML = 'you are genious'
-    } else {
-        document.getElementById('per').style.color = 'red'
-        document.getElementById('sco').style.border = '1px 1px 1px 1px '
-        winner.innerHTML = 'you are loser'
+    if (cout > 25) {
+        document.getElementById('score').classList.add('block')
+        percentage.innerText = `${score*'4'.toString().padStart(2 , 0)}%`
+        clearInterval(tim)
     }
 }
 time.innerText = `${min.toString().padStart(2 , 0)}.${sec.toString().padStart(2 , 0)}`
